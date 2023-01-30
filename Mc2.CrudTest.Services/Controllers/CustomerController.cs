@@ -35,8 +35,8 @@ namespace Mc2.CrudTest.Services.Controllers
         }
 
         [HttpPost("CreateCustomer")]
-        [ProducesResponseType(typeof(long), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<MessageContract<CustomerContract>>> CreateCustomer([FromBody] CustomerRequestContract customerRequest)
+        [ProducesResponseType(typeof(MessageContract<long>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<MessageContract<long>>> CreateCustomer([FromBody] CustomerRequestContract customerRequest)
         {
             var result = await new CustomerLogic(_context).AddCustomer(customerRequest.Convert());
             if (result.IsSucess)
@@ -46,8 +46,8 @@ namespace Mc2.CrudTest.Services.Controllers
         }
 
         [HttpPost("UpdateCustomer")]
-        [ProducesResponseType(typeof(long), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<long>> UpdateCustomer([FromBody] CustomerUpdateRequestContract customerRequest)
+        [ProducesResponseType(typeof(MessageContract<long>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<MessageContract<long>>> UpdateCustomer([FromBody] CustomerUpdateRequestContract customerRequest)
         {
             var result = await new CustomerLogic(_context).UpdateCustomer(customerRequest.Convert());
             if (result.IsSucess)
@@ -57,8 +57,8 @@ namespace Mc2.CrudTest.Services.Controllers
         }
 
         [HttpDelete("DeleteCustomer")]
-        [ProducesResponseType(typeof(long), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<long>> DeleteCustomerById(long id)
+        [ProducesResponseType(typeof(MessageContract<long>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<MessageContract<long>>> DeleteCustomerById(long id)
         {
             var result = await new CustomerLogic(_context).Delete(id);
             if (result.IsSucess)
