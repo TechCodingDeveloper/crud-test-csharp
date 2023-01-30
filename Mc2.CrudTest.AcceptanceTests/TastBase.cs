@@ -12,11 +12,17 @@ namespace Mc2.CrudTest.AcceptanceTests
     {
         public Client ClientServices { get; set; }
         public string BaseUrl { get; set; } = "http://localhost:5000/";
+        private static bool ServerRun { get; set; } = false;
         public TestBase()
         {
-            var builder = Application.API.Program.CreateHostBuilder(Array.Empty<string>());
-            var host = builder.Build();
-            Task.Run(() => host.Run());
+            if(!ServerRun)
+            {
+                var builder = Application.API.Program.CreateHostBuilder(Array.Empty<string>());
+                var host = builder.Build();
+                Task.Run(() => host.Run());
+
+                ServerRun = true;
+            }
 
             ClientServices = new Client(BaseUrl, new HttpClient());
         }
