@@ -21,7 +21,6 @@ namespace Mc2.CrudTest.Shared.Utility
             {
                 Result = default(T),
                 ErrorMessage = error.Message,
-                ErrorDetail = error.InnerException.ToString(),
                 IsSucess = false
             };
         }

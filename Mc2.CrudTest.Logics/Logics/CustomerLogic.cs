@@ -2,6 +2,7 @@
 using Mc2.CrudTest.Shared.Contracts;
 using Mc2.CrudTest.Shared.Utility;
 using Mc2.CrudTest.Storage.Database.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace Mc2.CrudTest.Logics.Logics
         {
             try
             {
-                var customerResult = Get(customer.Id.Value);
+                var customerResult =await Get(customer.Id.Value);
 
                 if (customerResult.IsData())
                 {
@@ -60,7 +61,7 @@ namespace Mc2.CrudTest.Logics.Logics
         {
             try
             {
-                var customerResult = Get(Id);
+                var customerResult =await Get(Id);
 
                 if (customerResult.IsData())
                 {
@@ -80,15 +81,16 @@ namespace Mc2.CrudTest.Logics.Logics
                 return ex.ToErrorContract<long>();
             }
         }
-        public MessageContract<CustomerContract> Get(long Id)
+        public async Task<MessageContract<CustomerContract>> Get(long Id)
         {
-            var result = DatabaseContext.Customers.FirstOrDefault(dr => dr.Id == Id);
+            var result =await DatabaseContext.Customers.AsNoTracking().FirstOrDefaultAsync(dr => dr.Id == Id);
 
             return CustomerContract.ConvertContract(result).ToContract();
         }
-        public MessageContract<List<CustomerContract>> GetAll()
+        public async Task<MessageContract<List<CustomerContract>>> GetAll()
         {
-            return DatabaseContext.Customers.Select(dr => CustomerContract.ConvertContract(dr)).ToList().ToContract();
+            var result =await DatabaseContext.Customers.AsNoTracking().Select(dr => CustomerContract.ConvertContract(dr)).ToListAsync();
+            return result.ToContract();
         }
     }
 }

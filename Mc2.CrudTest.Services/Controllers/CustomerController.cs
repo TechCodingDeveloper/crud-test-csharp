@@ -28,10 +28,10 @@ namespace Mc2.CrudTest.Services.Controllers
 
         [HttpGet("GetCustomer")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [ProducesResponseType(typeof(CustomerContract), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<CustomerContract>> GetCustomerById(long id)
+        [ProducesResponseType(typeof(MessageContract<CustomerContract>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<MessageContract<CustomerContract>>> GetCustomerById(long id)
         {
-            return Ok(new CustomerLogic(_context).Get(id));
+            return Ok(await new CustomerLogic(_context).Get(id));
         }
 
         [HttpPost("CreateCustomer")]
@@ -71,7 +71,7 @@ namespace Mc2.CrudTest.Services.Controllers
         [ProducesResponseType(typeof(MessageContract<List<CustomerContract>>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<MessageContract<List<CustomerContract>>>> GetCustomers()
         {
-            return Ok(new CustomerLogic(_context).GetAll());
+            return Ok(await new CustomerLogic(_context).GetAll());
         }
 
     }
