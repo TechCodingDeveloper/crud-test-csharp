@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mc2.CrudTest.Presentation.Front", "Mc2.CrudTest.Presentation\Front\Mc2.CrudTest.Presentation.Front.csproj", "{4B62EAE3-1858-4833-9E36-EE77FADC2328}"
 EndProject
@@ -10,6 +10,18 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mc2.CrudTest.Shared", "Mc2.CrudTest.Presentation\Shared\Mc2.CrudTest.Shared.csproj", "{661369DC-0F78-4889-BA3B-639513A49789}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mc2.CrudTest.Presentation.Server", "Mc2.CrudTest.Presentation\Server\Mc2.CrudTest.Presentation.Server.csproj", "{8D41010B-AEF1-4742-B7EC-6A5AE62C45FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{892BC653-B02E-4F9F-B5E3-F7B87C02E6C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{EFCE089D-64BE-4D74-A7BD-E94F4959064F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application-Layer", "Application-Layer", "{52D78EAF-5B7E-49A3-9260-7FF2C481B667}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic-Layer", "BusinessLogic-Layer", "{F39DD6CB-9696-4477-9A3C-A5F99D23656A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database-Layer", "Database-Layer", "{274F4999-6339-492E-89D1-291D175EFA52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test-Layer", "Test-Layer", "{6C38A7D4-ECCE-4EE2-9152-54AB01458569}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +48,16 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B62EAE3-1858-4833-9E36-EE77FADC2328} = {52D78EAF-5B7E-49A3-9260-7FF2C481B667}
+		{00E0E714-1EB4-4B62-950F-AE7C3BFD6766} = {6C38A7D4-ECCE-4EE2-9152-54AB01458569}
+		{661369DC-0F78-4889-BA3B-639513A49789} = {EFCE089D-64BE-4D74-A7BD-E94F4959064F}
+		{8D41010B-AEF1-4742-B7EC-6A5AE62C45FC} = {52D78EAF-5B7E-49A3-9260-7FF2C481B667}
+		{52D78EAF-5B7E-49A3-9260-7FF2C481B667} = {892BC653-B02E-4F9F-B5E3-F7B87C02E6C3}
+		{F39DD6CB-9696-4477-9A3C-A5F99D23656A} = {892BC653-B02E-4F9F-B5E3-F7B87C02E6C3}
+		{274F4999-6339-492E-89D1-291D175EFA52} = {892BC653-B02E-4F9F-B5E3-F7B87C02E6C3}
+		{6C38A7D4-ECCE-4EE2-9152-54AB01458569} = {892BC653-B02E-4F9F-B5E3-F7B87C02E6C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B5A26C9-68C1-49D9-9F32-AF907A1730C2}
