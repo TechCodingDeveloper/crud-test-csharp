@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Storage", "Mc2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Domain", "Mc2.CrudTest.Domain\Mc2.CrudTest.Domain.csproj", "{281E166F-8F06-46AD-8F4D-68462C0D7903}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.Logics", "Mc2.CrudTest.Logics\Mc2.CrudTest.Logics.csproj", "{CB024C74-1E58-4F33-B90D-54AD5D27626B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{281E166F-8F06-46AD-8F4D-68462C0D7903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{281E166F-8F06-46AD-8F4D-68462C0D7903}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{281E166F-8F06-46AD-8F4D-68462C0D7903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB024C74-1E58-4F33-B90D-54AD5D27626B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB024C74-1E58-4F33-B90D-54AD5D27626B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB024C74-1E58-4F33-B90D-54AD5D27626B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB024C74-1E58-4F33-B90D-54AD5D27626B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{6C38A7D4-ECCE-4EE2-9152-54AB01458569} = {892BC653-B02E-4F9F-B5E3-F7B87C02E6C3}
 		{2DAC81EE-1BED-41BB-A77E-72ADBBD6742D} = {274F4999-6339-492E-89D1-291D175EFA52}
 		{281E166F-8F06-46AD-8F4D-68462C0D7903} = {274F4999-6339-492E-89D1-291D175EFA52}
+		{CB024C74-1E58-4F33-B90D-54AD5D27626B} = {F39DD6CB-9696-4477-9A3C-A5F99D23656A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B5A26C9-68C1-49D9-9F32-AF907A1730C2}
