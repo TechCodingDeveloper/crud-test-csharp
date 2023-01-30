@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\Mc2.CrudTest.Services\Mc2.CrudTest.Services.csproj" />
+    <ProjectReference Include="..\Mc2.CrudTest.Storage\Mc2.CrudTest.Storage.csproj" />
+  </ItemGroup>
+
+</Project>

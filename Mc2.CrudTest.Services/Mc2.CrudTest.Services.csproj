@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mc2.CrudTest.Domain\Mc2.CrudTest.Domain.csproj" />
+    <ProjectReference Include="..\Mc2.CrudTest.Logics\Mc2.CrudTest.Logics.csproj" />
+    <ProjectReference Include="..\Mc2.CrudTest.Storage\Mc2.CrudTest.Storage.csproj" />
+  </ItemGroup>
+
 </Project>

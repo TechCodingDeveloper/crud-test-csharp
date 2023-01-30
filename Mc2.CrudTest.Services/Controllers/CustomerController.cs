@@ -1,5 +1,7 @@
 ﻿using Mc2.CrudTest.Domain.Contracts.Common;
+using Mc2.CrudTest.Domain.Contracts.Requests;
 using Mc2.CrudTest.Logics.Logics;
+using Mc2.CrudTest.Shared.Contracts;
 using Mc2.CrudTest.Storage.Database.Contexts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
