@@ -15,6 +15,7 @@ namespace Mc2.CrudTest.Shared.Contracts
 
         public bool IsData()
         {
+
             if (IsSucess && Result != null)
                 return true;
             else

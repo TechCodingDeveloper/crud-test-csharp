@@ -9,6 +9,7 @@ namespace Mc2.CrudTest.Storage.Database.Contexts
         {
         }
         public DbSet<CustomerEntity> Customers { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -20,6 +21,13 @@ namespace Mc2.CrudTest.Storage.Database.Contexts
                 mb.HasIndex(dr => new { dr.FirstName, dr.LastName, dr.DateOfBirth }).IsUnique();
                 mb.Property(dr => dr.PhoneNumber).HasMaxLength(32).HasColumnType("varchar(32)");
             });
+
+            modelBuilder.Entity<UserEntity>(mb =>
+            {
+                mb.HasKey(dr => dr.Id);
+                mb.HasIndex(dr => dr.UserName).IsUnique();
+            });
+
         }
     }
 }

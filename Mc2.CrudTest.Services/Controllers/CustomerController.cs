@@ -3,6 +3,7 @@ using Mc2.CrudTest.Domain.Contracts.Requests;
 using Mc2.CrudTest.Logics.Logics;
 using Mc2.CrudTest.Shared.Contracts;
 using Mc2.CrudTest.Storage.Database.Contexts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -25,8 +26,9 @@ namespace Mc2.CrudTest.Services.Controllers
             _context = context ?? throw new ArgumentNullException(nameof(context));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
-
+            
         [HttpGet("GetCustomer")]
+        [Authorize]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(MessageContract<CustomerContract>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<MessageContract<CustomerContract>>> GetCustomerById(long id)
